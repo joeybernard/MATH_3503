@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  title: "MATH 3503 - Winter 2025"
+  author: "Joey Bernard"
+  date: "2024-07-05"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
