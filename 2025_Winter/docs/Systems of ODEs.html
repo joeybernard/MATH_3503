@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction – MATH 3503 - Winter 2025</title>
+<title>4&nbsp; Systems of ODEs – MATH 3503 - Winter 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./Fourier Series.html" rel="next">
+<link href="./Second Order ODEs.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -101,7 +81,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Systems of ODEs.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Systems of ODEs</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -134,14 +114,44 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./First Order ODEs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">First Order ODEs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Second Order ODEs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Second Order ODEs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Systems of ODEs.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Systems of ODEs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Fourier Series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Fourier Series</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Laplace Transforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Laplace Transforms</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -155,15 +165,30 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#fundamentals-and-examples" id="toc-fundamentals-and-examples" class="nav-link active" data-scroll-target="#fundamentals-and-examples"><span class="header-section-number">4.1</span> Fundamentals and Examples</a></li>
+  <li><a href="#physical-examples" id="toc-physical-examples" class="nav-link" data-scroll-target="#physical-examples"><span class="header-section-number">4.2</span> Physical Examples</a></li>
+  <li><a href="#ideas-and-notation" id="toc-ideas-and-notation" class="nav-link" data-scroll-target="#ideas-and-notation"><span class="header-section-number">4.3</span> Ideas and Notation</a></li>
+  <li><a href="#eigenvalue-method-examples" id="toc-eigenvalue-method-examples" class="nav-link" data-scroll-target="#eigenvalue-method-examples"><span class="header-section-number">4.4</span> Eigenvalue Method Examples</a></li>
+  <li><a href="#complex-eigenvalues" id="toc-complex-eigenvalues" class="nav-link" data-scroll-target="#complex-eigenvalues"><span class="header-section-number">4.5</span> Complex Eigenvalues</a></li>
+  <li><a href="#vector-fields" id="toc-vector-fields" class="nav-link" data-scroll-target="#vector-fields"><span class="header-section-number">4.6</span> Vector Fields</a></li>
+  <li><a href="#second-order-systems" id="toc-second-order-systems" class="nav-link" data-scroll-target="#second-order-systems"><span class="header-section-number">4.7</span> Second Order Systems</a></li>
+  <li><a href="#repeated-eigenvalues" id="toc-repeated-eigenvalues" class="nav-link" data-scroll-target="#repeated-eigenvalues"><span class="header-section-number">4.8</span> Repeated Eigenvalues</a></li>
+  <li><a href="#matrix-exponentials" id="toc-matrix-exponentials" class="nav-link" data-scroll-target="#matrix-exponentials"><span class="header-section-number">4.9</span> Matrix Exponentials</a></li>
+  <li><a href="#non-homogeneous-equations" id="toc-non-homogeneous-equations" class="nav-link" data-scroll-target="#non-homogeneous-equations"><span class="header-section-number">4.10</span> Non-homogeneous Equations</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Systems of ODEs</span></h1>
 </div>
 
 
@@ -180,15 +205,38 @@ div.csl-indent {
 </header>
 
 
-<p>This is a book created from markdown and executable code.</p>
-<p>See <span class="citation" data-cites="knuth84">Knuth (<a href="references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
+<section id="fundamentals-and-examples" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="fundamentals-and-examples"><span class="header-section-number">4.1</span> Fundamentals and Examples</h2>
+</section>
+<section id="physical-examples" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="physical-examples"><span class="header-section-number">4.2</span> Physical Examples</h2>
+</section>
+<section id="ideas-and-notation" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="ideas-and-notation"><span class="header-section-number">4.3</span> Ideas and Notation</h2>
+</section>
+<section id="eigenvalue-method-examples" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="eigenvalue-method-examples"><span class="header-section-number">4.4</span> Eigenvalue Method Examples</h2>
+</section>
+<section id="complex-eigenvalues" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="complex-eigenvalues"><span class="header-section-number">4.5</span> Complex Eigenvalues</h2>
+</section>
+<section id="vector-fields" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="vector-fields"><span class="header-section-number">4.6</span> Vector Fields</h2>
+</section>
+<section id="second-order-systems" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="second-order-systems"><span class="header-section-number">4.7</span> Second Order Systems</h2>
+</section>
+<section id="repeated-eigenvalues" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="repeated-eigenvalues"><span class="header-section-number">4.8</span> Repeated Eigenvalues</h2>
+</section>
+<section id="matrix-exponentials" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="matrix-exponentials"><span class="header-section-number">4.9</span> Matrix Exponentials</h2>
+</section>
+<section id="non-homogeneous-equations" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="non-homogeneous-equations"><span class="header-section-number">4.10</span> Non-homogeneous Equations</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
-</div>
-</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -610,13 +658,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./Second Order ODEs.html" class="pagination-link" aria-label="Second Order ODEs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Second Order ODEs</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Fourier Series.html" class="pagination-link" aria-label="Fourier Series">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Fourier Series</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

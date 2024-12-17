@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "MATH 3503 - Winter 2025"
@@ -8,6 +9,11 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - First Order ODEs.qmd
+    - Second Order ODEs.qmd
+    - Systems of ODEs.qmd
+    - Fourier Series.qmd
+    - Laplace Transforms.qmd
     - summary.qmd
     - references.qmd
 
@@ -17,7 +23,7 @@ format:
   html:
     theme: cosmo
   pdf:
-    documentclass: scrreprt
+    documentclass: scrbook
 
 
 

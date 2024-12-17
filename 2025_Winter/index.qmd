@@ -1,5 +1,5 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+These notes are for the Winter 2025 term of the course MATH 3503 at the University of New Brunswick. These notes will cover more advanced calculus topics for engineers.
 
 To learn more about Quarto books visit <https://quarto.org/docs/books>.

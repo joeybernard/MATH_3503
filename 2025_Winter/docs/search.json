@@ -1,0 +1,372 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MATH 3503 - Winter 2025",
+    "section": "",
+    "text": "Preface\nThese notes are for the Winter 2025 term of the course MATH 3503 at the University of New Brunswick. These notes will cover more advanced calculus topics for engineers.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "First Order ODEs.html",
+    "href": "First Order ODEs.html",
+    "title": "2  First Order ODEs",
+    "section": "",
+    "text": "2.1 Introduction\nThis is some text",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>First Order ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "First Order ODEs.html#variable-separablelinear",
+    "href": "First Order ODEs.html#variable-separablelinear",
+    "title": "2  First Order ODEs",
+    "section": "2.2 Variable-Separable/Linear",
+    "text": "2.2 Variable-Separable/Linear\nAnd this is some more",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>First Order ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "First Order ODEs.html#exacthomogeneous",
+    "href": "First Order ODEs.html#exacthomogeneous",
+    "title": "2  First Order ODEs",
+    "section": "2.3 Exact/Homogeneous",
+    "text": "2.3 Exact/Homogeneous",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>First Order ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "First Order ODEs.html#bernoulli",
+    "href": "First Order ODEs.html#bernoulli",
+    "title": "2  First Order ODEs",
+    "section": "2.4 Bernoulli",
+    "text": "2.4 Bernoulli",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>First Order ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Second Order ODEs.html",
+    "href": "Second Order ODEs.html",
+    "title": "3  Second Order ODEs",
+    "section": "",
+    "text": "3.1 Homogeneous with Constant Coefficients",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Second Order ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Second Order ODEs.html#examples-and-the-initial-value-problem",
+    "href": "Second Order ODEs.html#examples-and-the-initial-value-problem",
+    "title": "3  Second Order ODEs",
+    "section": "3.2 Examples and the Initial Value Problem",
+    "text": "3.2 Examples and the Initial Value Problem",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Second Order ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Second Order ODEs.html#non-homogeneous-differential-equations-with-constant-coefficients",
+    "href": "Second Order ODEs.html#non-homogeneous-differential-equations-with-constant-coefficients",
+    "title": "3  Second Order ODEs",
+    "section": "3.3 Non-homogeneous Differential Equations with Constant Coefficients",
+    "text": "3.3 Non-homogeneous Differential Equations with Constant Coefficients",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Second Order ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Second Order ODEs.html#variation-of-parameters",
+    "href": "Second Order ODEs.html#variation-of-parameters",
+    "title": "3  Second Order ODEs",
+    "section": "3.4 Variation of Parameters",
+    "text": "3.4 Variation of Parameters",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Second Order ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Second Order ODEs.html#applications",
+    "href": "Second Order ODEs.html#applications",
+    "title": "3  Second Order ODEs",
+    "section": "3.5 Applications",
+    "text": "3.5 Applications",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Second Order ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Systems of ODEs.html",
+    "href": "Systems of ODEs.html",
+    "title": "4  Systems of ODEs",
+    "section": "",
+    "text": "4.1 Fundamentals and Examples",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Systems of ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Systems of ODEs.html#physical-examples",
+    "href": "Systems of ODEs.html#physical-examples",
+    "title": "4  Systems of ODEs",
+    "section": "4.2 Physical Examples",
+    "text": "4.2 Physical Examples",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Systems of ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Systems of ODEs.html#ideas-and-notation",
+    "href": "Systems of ODEs.html#ideas-and-notation",
+    "title": "4  Systems of ODEs",
+    "section": "4.3 Ideas and Notation",
+    "text": "4.3 Ideas and Notation",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Systems of ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Systems of ODEs.html#eigenvalue-method-examples",
+    "href": "Systems of ODEs.html#eigenvalue-method-examples",
+    "title": "4  Systems of ODEs",
+    "section": "4.4 Eigenvalue Method Examples",
+    "text": "4.4 Eigenvalue Method Examples",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Systems of ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Systems of ODEs.html#complex-eigenvalues",
+    "href": "Systems of ODEs.html#complex-eigenvalues",
+    "title": "4  Systems of ODEs",
+    "section": "4.5 Complex Eigenvalues",
+    "text": "4.5 Complex Eigenvalues",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Systems of ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Systems of ODEs.html#vector-fields",
+    "href": "Systems of ODEs.html#vector-fields",
+    "title": "4  Systems of ODEs",
+    "section": "4.6 Vector Fields",
+    "text": "4.6 Vector Fields",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Systems of ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Systems of ODEs.html#second-order-systems",
+    "href": "Systems of ODEs.html#second-order-systems",
+    "title": "4  Systems of ODEs",
+    "section": "4.7 Second Order Systems",
+    "text": "4.7 Second Order Systems",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Systems of ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Systems of ODEs.html#repeated-eigenvalues",
+    "href": "Systems of ODEs.html#repeated-eigenvalues",
+    "title": "4  Systems of ODEs",
+    "section": "4.8 Repeated Eigenvalues",
+    "text": "4.8 Repeated Eigenvalues",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Systems of ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Systems of ODEs.html#matrix-exponentials",
+    "href": "Systems of ODEs.html#matrix-exponentials",
+    "title": "4  Systems of ODEs",
+    "section": "4.9 Matrix Exponentials",
+    "text": "4.9 Matrix Exponentials",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Systems of ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Systems of ODEs.html#non-homogeneous-equations",
+    "href": "Systems of ODEs.html#non-homogeneous-equations",
+    "title": "4  Systems of ODEs",
+    "section": "4.10 Non-homogeneous Equations",
+    "text": "4.10 Non-homogeneous Equations",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Systems of ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Fourier Series.html",
+    "href": "Fourier Series.html",
+    "title": "5  Fourier Series",
+    "section": "",
+    "text": "5.1 Boundary Value Problem",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Fourier Series</span>"
+    ]
+  },
+  {
+    "objectID": "Fourier Series.html#orthogonality-of-eigenfunctions",
+    "href": "Fourier Series.html#orthogonality-of-eigenfunctions",
+    "title": "5  Fourier Series",
+    "section": "5.2 Orthogonality of Eigenfunctions",
+    "text": "5.2 Orthogonality of Eigenfunctions",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Fourier Series</span>"
+    ]
+  },
+  {
+    "objectID": "Fourier Series.html#eigenfunction-decomposition-and-trigonometric-series",
+    "href": "Fourier Series.html#eigenfunction-decomposition-and-trigonometric-series",
+    "title": "5  Fourier Series",
+    "section": "5.3 Eigenfunction Decomposition and Trigonometric Series",
+    "text": "5.3 Eigenfunction Decomposition and Trigonometric Series",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Fourier Series</span>"
+    ]
+  },
+  {
+    "objectID": "Fourier Series.html#sawtooth-and-square-wave-examples",
+    "href": "Fourier Series.html#sawtooth-and-square-wave-examples",
+    "title": "5  Fourier Series",
+    "section": "5.4 Sawtooth and Square Wave Examples",
+    "text": "5.4 Sawtooth and Square Wave Examples",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Fourier Series</span>"
+    ]
+  },
+  {
+    "objectID": "Fourier Series.html#more-series",
+    "href": "Fourier Series.html#more-series",
+    "title": "5  Fourier Series",
+    "section": "5.5 More Series",
+    "text": "5.5 More Series",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Fourier Series</span>"
+    ]
+  },
+  {
+    "objectID": "Laplace Transforms.html",
+    "href": "Laplace Transforms.html",
+    "title": "6  Laplace Transforms",
+    "section": "",
+    "text": "6.1 Introduction",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Laplace Transforms</span>"
+    ]
+  },
+  {
+    "objectID": "Laplace Transforms.html#examples",
+    "href": "Laplace Transforms.html#examples",
+    "title": "6  Laplace Transforms",
+    "section": "6.2 Examples",
+    "text": "6.2 Examples",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Laplace Transforms</span>"
+    ]
+  },
+  {
+    "objectID": "Laplace Transforms.html#inverse-laplace-transform",
+    "href": "Laplace Transforms.html#inverse-laplace-transform",
+    "title": "6  Laplace Transforms",
+    "section": "6.3 Inverse Laplace Transform",
+    "text": "6.3 Inverse Laplace Transform",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Laplace Transforms</span>"
+    ]
+  },
+  {
+    "objectID": "Laplace Transforms.html#solving-homogeneous-odes",
+    "href": "Laplace Transforms.html#solving-homogeneous-odes",
+    "title": "6  Laplace Transforms",
+    "section": "6.4 Solving Homogeneous ODEs",
+    "text": "6.4 Solving Homogeneous ODEs",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Laplace Transforms</span>"
+    ]
+  },
+  {
+    "objectID": "Laplace Transforms.html#solving-non-homogeneous-odes",
+    "href": "Laplace Transforms.html#solving-non-homogeneous-odes",
+    "title": "6  Laplace Transforms",
+    "section": "6.5 Solving Non-homogeneous ODEs",
+    "text": "6.5 Solving Non-homogeneous ODEs",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Laplace Transforms</span>"
+    ]
+  },
+  {
+    "objectID": "Laplace Transforms.html#unit-step-function",
+    "href": "Laplace Transforms.html#unit-step-function",
+    "title": "6  Laplace Transforms",
+    "section": "6.6 Unit Step Function",
+    "text": "6.6 Unit Step Function",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Laplace Transforms</span>"
+    ]
+  },
+  {
+    "objectID": "Laplace Transforms.html#more-transforms-of-odes",
+    "href": "Laplace Transforms.html#more-transforms-of-odes",
+    "title": "6  Laplace Transforms",
+    "section": "6.7 More Transforms of ODEs",
+    "text": "6.7 More Transforms of ODEs",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Laplace Transforms</span>"
+    ]
+  },
+  {
+    "objectID": "Laplace Transforms.html#convolution",
+    "href": "Laplace Transforms.html#convolution",
+    "title": "6  Laplace Transforms",
+    "section": "6.8 Convolution",
+    "text": "6.8 Convolution",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Laplace Transforms</span>"
+    ]
+  },
+  {
+    "objectID": "Laplace Transforms.html#impulse-functions",
+    "href": "Laplace Transforms.html#impulse-functions",
+    "title": "6  Laplace Transforms",
+    "section": "6.9 Impulse Functions",
+    "text": "6.9 Impulse Functions",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Laplace Transforms</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "7  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]
