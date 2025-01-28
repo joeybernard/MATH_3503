@@ -4,10 +4,10 @@ format: html
 ---
 
 ## Introduction
-This is some text
+First order ODEs are the
 
 ## Variable-Separable/Linear
-And this is some more 
+And this is some more
 
 ## Exact/Homogeneous
 
