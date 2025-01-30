@@ -1,11 +1,96 @@
 # Second Order ODEs
 
+Second order ODEs are differential equations where we may have second derivatives of y with respect to x. The general form looks like
+
+$A(x) y^{''} + B(x) y^{'} + C(x) y = F(x)$
+
+Usually, we divide through so that the $y^{''}$ term is all by itself. If we do this, we end up with
+
+$y^{''} + p(x) y^{'} + q(x) y = f(x)$
+
+
+
 ## Homogeneous with Constant Coefficients
 
-## Examples and the Initial Value Problem
+The first class of second order ODEs we will look at are homogeneous equations. This is the special case of setting $f(x) = 0$. We will also further constrain the equations for this section by only looking at constant coefficients. This special case looks like
+
+$y^{''} + b y^{'} + c y = 0$
+
+In the most general case, there should be two linearly independent solutions ($y_1 and y_2$) that combine to make the general solution. This general solution looks like
+
+$y = C_1 y_1 + C_2 y_2$
+
+You can check for linear independence by using the Wronskian. If we have linear independence, then we have
+
+$\begin{vmatrix}
+y_1 & y_2 \\
+y^{'}_1 & y^{'}_2
+\end{vmatrix} \ne 0$
+
+In order to find these two solutions to the differential equation, we start by setting up the characteristic equation that is associated with the differential equation. This characteristic equation is given by
+
+$a r^2 + b r + c = 0$
+
+We can then find out what the two values for r are. Because this is just a quadratic equation, it is simply
+
+$r_1,r_2 = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$
+
+There are three cases when solving for r.
+
+\begin{itemize}
+\item Case 1 - $r_1$ and $r_2$ are real and unique
+\item Case 2 - $r_1$ and $r_2$ are equal
+\item Case 3 - $r_1$ and $r_2$ are complex
+\end{itemize}
+
+### Case 1
+
+If we have case 1, we can easily construct our solution. In this case, it would look like
+
+$y = C_1 e^{r_1 x} + C_2 e^{r_2 x}$
+
+### Case 2
+
+If we have case 2, we can't simply use the same method as for case 1. We would end up with two equal equations. In this case, we can separate $y_1$ and $y_2$ by multiplying one of them by x. This would give us the solution
+
+$y = C_1 e^{r x} + C_2 x e^{r x}$
+
+### Case 3
+
+Case 3 is a new one if you have never considered the imaginary case for the quadratic equation. In this case, the solution to the characteristic equation is
+
+$r_{1,2} = \alpha \pm \beta i$
+
+In this case, we use the real and imaginary parts of r to make up our solution for y. The general form becomes
+
+$y = C_1 e^{\alpha x} cos(\beta x) + C_2 e^{\alpha x} sin(\beta x)$
+
+
+
+## Initial Value Problem
+
+In all of the above cases, we would have constants of integration that would show up in the solutions. In the first order ODE case, a single initial value is enough to define the constant of integration that appears. In the second order case, we will need two initial values. These take the form of
+
+$y(x_0) = y_0 \\
+y^{'}(x_0) = y^{'}_0$
+
+These can be plugged into the general solution for y to find a particular solution.
+
+
 
 ## Non-homogeneous Differential Equations with Constant Coefficients
 
-## Variation of Parameters
+Up to now, we have been working with homogeneous equations where f(x)=0. In many physical situations, we end up with a non-homogeneous differential equation. The f(x) term is often called a driving function or forcing function.
+
+In order to solve these types of equations, we start by assuming that the equation is homogeneous. In this way, we can find a complimentary solution, $y_c$ that solves the equation when we pretend that f(x)=0. The second step is to come up with a second solution, $y_p$, called the particular solution. We will look at two options of finding this particular solution.
+
+### Undetermined Coefficients
+
+The first method is to use the method of undetermined coefficients.
+
+### Variation of Parameters
+
+
+
 
 ## Applications

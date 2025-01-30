@@ -3,12 +3,128 @@ title: "First Order ODEs"
 format: html
 ---
 
-## Introduction
-First order ODEs are the
 
-## Variable-Separable/Linear
-And this is some more
+
+## Introduction
+
+First order Ordinary Differential Equations (ODEs) are the types of equations that you were exposed to in your first calculus class. These are derivative functions, made up of first derivatives of one independent variable. In the most general case, these look like
+
+$\frac{dy}{dx} = f(x,y)$
+
+In the special case where f(x,y) is actually only a function of x (i.e., f(x,y) = f(x)), then the most general form of a solution looks like
+
+$y(x) = \int f(x) dx$
+
+In this section, we will look at various techniques that can be used to solve other forms of first order ODEs. In all of the following cases, we may or may not have an initial condition. When we do, this initial condition can be used to determine any constants of integration that pop up during calculating the solution.
+
+
+
+## Seperable ODEs
+
+One of the simplest forms of first order ODE is the seperable form. This happens when you can write the differential equation in the form of
+
+$y^{'} = f(x) g(y)$
+
+When you have an equation that looks like this, you can rearrange it to look like
+
+$\frac{dy}{dx} = f(x) g(y) \\
+\frac{1}{g(y)} dy = f(x) dx$
+
+Solving the equation becomes as simple as integrating both sides of the rearranged equation.
+
+$\int \frac{1}{g(y)} dy = \int f(x) dx$
+
+
+
+## Linear Equations and Integrating Factors
+
+The next step in complexity for first order ODEs is if we have an extra function of x and y. The general form in this case looks like
+
+$y^{'} + p(x) y = f(x)$
+
+This type of equation is considered linear because there are no higher powers of $y$ or $y^{'}$. In order to solve these types of equations, we need to use an integrating factor, defined by
+
+$I(x) = e^{\int p(x) dx}$
+
+This extra factor can now get used in solving the differential equation by plugging it into
+
+$y = \frac{1}{I(x)} \int I(x) * f(x) dx$
+
+
 
 ## Exact/Homogeneous
 
+Exact equations are special first order ODEs that are derived from a potential function. These are common types of equations that occur in physics and engineering. In these types of cases, you have a potential field that defines the behaviour described by the differential equation. In the general case, we may have the potential defined by
+
+$F(x,y)$
+
+In this general case, we can look at the total derivative of F(x,y).
+
+$dF = \frac{\partial F}{\partial x} dx + \frac{\partial F}{\partial y} dy$
+
+This should look familiar from the MATH 2513 class, when you covered partial differential equations. We can use shorter nomenclature and rewrite this as
+
+$dF = M(x,y) dx + N(x,y) dy$
+
+If we assume that the potential function is a constant function, then we know that $dF = 0$, and we can rewrite our equation as
+
+$M(x,y) dx + N(x,y) dy = 0$
+
+This nows looks like something that we may run into when working with first order ODEs. Specifically, this is a homogeneous ODE. If we can write our problem equation in this form, we can work backwards to discover what the solution is. The first step is to integrate either M or N. You usually pick whichever one is simpler to work with. In the M case, we end up with
+
+$F = \int M dx + C(y)$
+
+The important part is the extra term of C(y). You then take this solution for F(x,y) and take the derivative with respect to y. You then set this equal to N, in order to solve for what C(y) is. You can also start by integrating N first, and you end up with an extra term of C(x).
+
+$F = \int N dy + C(x)$
+
+We can now take the derivative with respect to x and set it equal M. In this way, we can solve for C(x).
+
+In some cases, an equation of the form
+
+$M dx + N dy = 0$
+
+actually isn't exact. If we aren't sure, we can test for exactness by checking to see if we have
+
+$\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$
+
+This comes from the fact that both M and N are partial derivatives of the potential function F. If you remember from MATH 2513, we have
+
+$\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x} \\
+\frac{\partial^2 F}{\partial y \partial x} = \frac{\partial^2 F}{\partial x \partial y}$
+
+So, if we fail this test, what can we do? In these cases, we can multiply by an integrating factor to get it into an exact form. There is a derivation of how to get the following equation, but we can use
+
+$P(x) = \frac{M_y - N_x}{N}$
+
+to find a function. This becomes our integrating factor, that we can substitute into
+
+$e^{\int P(x) dx} (M dx + N dy) = 0$
+
+This new equation is now exact, and we can use the above technique to solve for a solution.
+
+
+
 ## Bernoulli
+
+There are several classes of equations where we can use a change of variable to help make the differential equation simpler to solve. One of these types are Bernoulli equations. These have a general form of
+
+$y^{'} + p(x) y = q(x) y^{n}$
+
+In this case, we can start by dividing out both sides of the equation by $y^{n}$. This gives us
+
+$y^{-n} y^{'} + p(x) y^{1-n} = q(x)$
+
+We can now do a change of variables to
+
+$u = y^{1-n}$
+
+with the first derivative being
+
+$u^{'} = (1-n) y^{-n} y^{'}$
+
+Substituting this back into the original differential equation, we end up with
+
+$\frac{u^{'}}{(1-n) y^{-n}} + p(x) u = q(x)$
+
+The resulting new differential equation will then need to be solved using one of the other techniques you learned. In some cases, it may be seperable, in some cases you may need to use an integrating factor. Once you have a solution for u, you can then substitute it back into the change of variable you did above.

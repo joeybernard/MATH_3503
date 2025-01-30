@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ecbd48cc4761e6ed622f7d401c35a2ec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -171,9 +200,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
-  <li><a href="#variable-separablelinear" id="toc-variable-separablelinear" class="nav-link" data-scroll-target="#variable-separablelinear"><span class="header-section-number">2.2</span> Variable-Separable/Linear</a></li>
-  <li><a href="#exacthomogeneous" id="toc-exacthomogeneous" class="nav-link" data-scroll-target="#exacthomogeneous"><span class="header-section-number">2.3</span> Exact/Homogeneous</a></li>
-  <li><a href="#bernoulli" id="toc-bernoulli" class="nav-link" data-scroll-target="#bernoulli"><span class="header-section-number">2.4</span> Bernoulli</a></li>
+  <li><a href="#seperable-odes" id="toc-seperable-odes" class="nav-link" data-scroll-target="#seperable-odes"><span class="header-section-number">2.2</span> Seperable ODEs</a></li>
+  <li><a href="#linear-equations-and-integrating-factors" id="toc-linear-equations-and-integrating-factors" class="nav-link" data-scroll-target="#linear-equations-and-integrating-factors"><span class="header-section-number">2.3</span> Linear Equations and Integrating Factors</a></li>
+  <li><a href="#exacthomogeneous" id="toc-exacthomogeneous" class="nav-link" data-scroll-target="#exacthomogeneous"><span class="header-section-number">2.4</span> Exact/Homogeneous</a></li>
+  <li><a href="#bernoulli" id="toc-bernoulli" class="nav-link" data-scroll-target="#bernoulli"><span class="header-section-number">2.5</span> Bernoulli</a></li>
   </ul>
 </nav>
     </div>
@@ -201,17 +231,72 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
-<p>This is some text</p>
+<p>First order Ordinary Differential Equations (ODEs) are the types of equations that you were exposed to in your first calculus class. These are derivative functions, made up of first derivatives of one independent variable. In the most general case, these look like</p>
+<p><span class="math inline">\(\frac{dy}{dx} = f(x,y)\)</span></p>
+<p>In the special case where f(x,y) is actually only a function of x (i.e., f(x,y) = f(x)), then the most general form of a solution looks like</p>
+<p><span class="math inline">\(y(x) = \int f(x) dx\)</span></p>
+<p>In this section, we will look at various techniques that can be used to solve other forms of first order ODEs. In all of the following cases, we may or may not have an initial condition. When we do, this initial condition can be used to determine any constants of integration that pop up during calculating the solution.</p>
 </section>
-<section id="variable-separablelinear" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="variable-separablelinear"><span class="header-section-number">2.2</span> Variable-Separable/Linear</h2>
-<p>And this is some more</p>
+<section id="seperable-odes" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="seperable-odes"><span class="header-section-number">2.2</span> Seperable ODEs</h2>
+<p>One of the simplest forms of first order ODE is the seperable form. This happens when you can write the differential equation in the form of</p>
+<p><span class="math inline">\(y^{'} = f(x) g(y)\)</span></p>
+<p>When you have an equation that looks like this, you can rearrange it to look like</p>
+<p><span class="math inline">\(\frac{dy}{dx} = f(x) g(y) \\
+\frac{1}{g(y)} dy = f(x) dx\)</span></p>
+<p>Solving the equation becomes as simple as integrating both sides of the rearranged equation.</p>
+<p><span class="math inline">\(\int \frac{1}{g(y)} dy = \int f(x) dx\)</span></p>
 </section>
-<section id="exacthomogeneous" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="exacthomogeneous"><span class="header-section-number">2.3</span> Exact/Homogeneous</h2>
+<section id="linear-equations-and-integrating-factors" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="linear-equations-and-integrating-factors"><span class="header-section-number">2.3</span> Linear Equations and Integrating Factors</h2>
+<p>The next step in complexity for first order ODEs is if we have an extra function of x and y. The general form in this case looks like</p>
+<p><span class="math inline">\(y^{'} + p(x) y = f(x)\)</span></p>
+<p>This type of equation is considered linear because there are no higher powers of <span class="math inline">\(y\)</span> or <span class="math inline">\(y^{'}\)</span>. In order to solve these types of equations, we need to use an integrating factor, defined by</p>
+<p><span class="math inline">\(I(x) = e^{\int p(x) dx}\)</span></p>
+<p>This extra factor can now get used in solving the differential equation by plugging it into</p>
+<p><span class="math inline">\(y = \frac{1}{I(x)} \int I(x) * f(x) dx\)</span></p>
 </section>
-<section id="bernoulli" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="bernoulli"><span class="header-section-number">2.4</span> Bernoulli</h2>
+<section id="exacthomogeneous" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="exacthomogeneous"><span class="header-section-number">2.4</span> Exact/Homogeneous</h2>
+<p>Exact equations are special first order ODEs that are derived from a potential function. These are common types of equations that occur in physics and engineering. In these types of cases, you have a potential field that defines the behaviour described by the differential equation. In the general case, we may have the potential defined by</p>
+<p><span class="math inline">\(F(x,y)\)</span></p>
+<p>In this general case, we can look at the total derivative of F(x,y).</p>
+<p><span class="math inline">\(dF = \frac{\partial F}{\partial x} dx + \frac{\partial F}{\partial y} dy\)</span></p>
+<p>This should look familiar from the MATH 2513 class, when you covered partial differential equations. We can use shorter nomenclature and rewrite this as</p>
+<p><span class="math inline">\(dF = M(x,y) dx + N(x,y) dy\)</span></p>
+<p>If we assume that the potential function is a constant function, then we know that <span class="math inline">\(dF = 0\)</span>, and we can rewrite our equation as</p>
+<p><span class="math inline">\(M(x,y) dx + N(x,y) dy = 0\)</span></p>
+<p>This nows looks like something that we may run into when working with first order ODEs. Specifically, this is a homogeneous ODE. If we can write our problem equation in this form, we can work backwards to discover what the solution is. The first step is to integrate either M or N. You usually pick whichever one is simpler to work with. In the M case, we end up with</p>
+<p><span class="math inline">\(F = \int M dx + C(y)\)</span></p>
+<p>The important part is the extra term of C(y). You then take this solution for F(x,y) and take the derivative with respect to y. You then set this equal to N, in order to solve for what C(y) is. You can also start by integrating N first, and you end up with an extra term of C(x).</p>
+<p><span class="math inline">\(F = \int N dy + C(x)\)</span></p>
+<p>We can now take the derivative with respect to x and set it equal M. In this way, we can solve for C(x).</p>
+<p>In some cases, an equation of the form</p>
+<p><span class="math inline">\(M dx + N dy = 0\)</span></p>
+<p>actually isn’t exact. If we aren’t sure, we can test for exactness by checking to see if we have</p>
+<p><span class="math inline">\(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}\)</span></p>
+<p>This comes from the fact that both M and N are partial derivatives of the potential function F. If you remember from MATH 2513, we have</p>
+<p><span class="math inline">\(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x} \\
+\frac{\partial^2 F}{\partial y \partial x} = \frac{\partial^2 F}{\partial x \partial y}\)</span></p>
+<p>So, if we fail this test, what can we do? In these cases, we can multiply by an integrating factor to get it into an exact form. There is a derivation of how to get the following equation, but we can use</p>
+<p><span class="math inline">\(P(x) = \frac{M_y - N_x}{N}\)</span></p>
+<p>to find a function. This becomes our integrating factor, that we can substitute into</p>
+<p><span class="math inline">\(e^{\int P(x) dx} (M dx + N dy) = 0\)</span></p>
+<p>This new equation is now exact, and we can use the above technique to solve for a solution.</p>
+</section>
+<section id="bernoulli" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="bernoulli"><span class="header-section-number">2.5</span> Bernoulli</h2>
+<p>There are several classes of equations where we can use a change of variable to help make the differential equation simpler to solve. One of these types are Bernoulli equations. These have a general form of</p>
+<p><span class="math inline">\(y^{'} + p(x) y = q(x) y^{n}\)</span></p>
+<p>In this case, we can start by dividing out both sides of the equation by <span class="math inline">\(y^{n}\)</span>. This gives us</p>
+<p><span class="math inline">\(y^{-n} y^{'} + p(x) y^{1-n} = q(x)\)</span></p>
+<p>We can now do a change of variables to</p>
+<p><span class="math inline">\(u = y^{1-n}\)</span></p>
+<p>with the first derivative being</p>
+<p><span class="math inline">\(u^{'} = (1-n) y^{-n} y^{'}\)</span></p>
+<p>Substituting this back into the original differential equation, we end up with</p>
+<p><span class="math inline">\(\frac{u^{'}}{(1-n) y^{-n}} + p(x) u = q(x)\)</span></p>
+<p>The resulting new differential equation will then need to be solved using one of the other techniques you learned. In some cases, it may be seperable, in some cases you may need to use an integrating factor. Once you have a solution for u, you can then substitute it back into the change of variable you did above.</p>
 
 
 </section>

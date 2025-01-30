@@ -24,17 +24,27 @@
     "href": "First Order ODEs.html",
     "title": "2  First Order ODEs",
     "section": "",
-    "text": "2.1 Introduction\nThis is some text",
+    "text": "2.1 Introduction\nFirst order Ordinary Differential Equations (ODEs) are the types of equations that you were exposed to in your first calculus class. These are derivative functions, made up of first derivatives of one independent variable. In the most general case, these look like\n\\(\\frac{dy}{dx} = f(x,y)\\)\nIn the special case where f(x,y) is actually only a function of x (i.e., f(x,y) = f(x)), then the most general form of a solution looks like\n\\(y(x) = \\int f(x) dx\\)\nIn this section, we will look at various techniques that can be used to solve other forms of first order ODEs. In all of the following cases, we may or may not have an initial condition. When we do, this initial condition can be used to determine any constants of integration that pop up during calculating the solution.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>First Order ODEs</span>"
     ]
   },
   {
-    "objectID": "First Order ODEs.html#variable-separablelinear",
-    "href": "First Order ODEs.html#variable-separablelinear",
+    "objectID": "First Order ODEs.html#seperable-odes",
+    "href": "First Order ODEs.html#seperable-odes",
     "title": "2  First Order ODEs",
-    "section": "2.2 Variable-Separable/Linear",
-    "text": "2.2 Variable-Separable/Linear\nAnd this is some more",
+    "section": "2.2 Seperable ODEs",
+    "text": "2.2 Seperable ODEs\nOne of the simplest forms of first order ODE is the seperable form. This happens when you can write the differential equation in the form of\n\\(y^{'} = f(x) g(y)\\)\nWhen you have an equation that looks like this, you can rearrange it to look like\n\\(\\frac{dy}{dx} = f(x) g(y) \\\\\n\\frac{1}{g(y)} dy = f(x) dx\\)\nSolving the equation becomes as simple as integrating both sides of the rearranged equation.\n\\(\\int \\frac{1}{g(y)} dy = \\int f(x) dx\\)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>First Order ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "First Order ODEs.html#linear-equations-and-integrating-factors",
+    "href": "First Order ODEs.html#linear-equations-and-integrating-factors",
+    "title": "2  First Order ODEs",
+    "section": "2.3 Linear Equations and Integrating Factors",
+    "text": "2.3 Linear Equations and Integrating Factors\nThe next step in complexity for first order ODEs is if we have an extra function of x and y. The general form in this case looks like\n\\(y^{'} + p(x) y = f(x)\\)\nThis type of equation is considered linear because there are no higher powers of \\(y\\) or \\(y^{'}\\). In order to solve these types of equations, we need to use an integrating factor, defined by\n\\(I(x) = e^{\\int p(x) dx}\\)\nThis extra factor can now get used in solving the differential equation by plugging it into\n\\(y = \\frac{1}{I(x)} \\int I(x) * f(x) dx\\)",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>First Order ODEs</span>"
     ]
@@ -43,8 +53,8 @@
     "objectID": "First Order ODEs.html#exacthomogeneous",
     "href": "First Order ODEs.html#exacthomogeneous",
     "title": "2  First Order ODEs",
-    "section": "2.3 Exact/Homogeneous",
-    "text": "2.3 Exact/Homogeneous",
+    "section": "2.4 Exact/Homogeneous",
+    "text": "2.4 Exact/Homogeneous\nExact equations are special first order ODEs that are derived from a potential function. These are common types of equations that occur in physics and engineering. In these types of cases, you have a potential field that defines the behaviour described by the differential equation. In the general case, we may have the potential defined by\n\\(F(x,y)\\)\nIn this general case, we can look at the total derivative of F(x,y).\n\\(dF = \\frac{\\partial F}{\\partial x} dx + \\frac{\\partial F}{\\partial y} dy\\)\nThis should look familiar from the MATH 2513 class, when you covered partial differential equations. We can use shorter nomenclature and rewrite this as\n\\(dF = M(x,y) dx + N(x,y) dy\\)\nIf we assume that the potential function is a constant function, then we know that \\(dF = 0\\), and we can rewrite our equation as\n\\(M(x,y) dx + N(x,y) dy = 0\\)\nThis nows looks like something that we may run into when working with first order ODEs. Specifically, this is a homogeneous ODE. If we can write our problem equation in this form, we can work backwards to discover what the solution is. The first step is to integrate either M or N. You usually pick whichever one is simpler to work with. In the M case, we end up with\n\\(F = \\int M dx + C(y)\\)\nThe important part is the extra term of C(y). You then take this solution for F(x,y) and take the derivative with respect to y. You then set this equal to N, in order to solve for what C(y) is. You can also start by integrating N first, and you end up with an extra term of C(x).\n\\(F = \\int N dy + C(x)\\)\nWe can now take the derivative with respect to x and set it equal M. In this way, we can solve for C(x).\nIn some cases, an equation of the form\n\\(M dx + N dy = 0\\)\nactually isn’t exact. If we aren’t sure, we can test for exactness by checking to see if we have\n\\(\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}\\)\nThis comes from the fact that both M and N are partial derivatives of the potential function F. If you remember from MATH 2513, we have\n\\(\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x} \\\\\n\\frac{\\partial^2 F}{\\partial y \\partial x} = \\frac{\\partial^2 F}{\\partial x \\partial y}\\)\nSo, if we fail this test, what can we do? In these cases, we can multiply by an integrating factor to get it into an exact form. There is a derivation of how to get the following equation, but we can use\n\\(P(x) = \\frac{M_y - N_x}{N}\\)\nto find a function. This becomes our integrating factor, that we can substitute into\n\\(e^{\\int P(x) dx} (M dx + N dy) = 0\\)\nThis new equation is now exact, and we can use the above technique to solve for a solution.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>First Order ODEs</span>"
     ]
@@ -53,8 +63,8 @@
     "objectID": "First Order ODEs.html#bernoulli",
     "href": "First Order ODEs.html#bernoulli",
     "title": "2  First Order ODEs",
-    "section": "2.4 Bernoulli",
-    "text": "2.4 Bernoulli",
+    "section": "2.5 Bernoulli",
+    "text": "2.5 Bernoulli\nThere are several classes of equations where we can use a change of variable to help make the differential equation simpler to solve. One of these types are Bernoulli equations. These have a general form of\n\\(y^{'} + p(x) y = q(x) y^{n}\\)\nIn this case, we can start by dividing out both sides of the equation by \\(y^{n}\\). This gives us\n\\(y^{-n} y^{'} + p(x) y^{1-n} = q(x)\\)\nWe can now do a change of variables to\n\\(u = y^{1-n}\\)\nwith the first derivative being\n\\(u^{'} = (1-n) y^{-n} y^{'}\\)\nSubstituting this back into the original differential equation, we end up with\n\\(\\frac{u^{'}}{(1-n) y^{-n}} + p(x) u = q(x)\\)\nThe resulting new differential equation will then need to be solved using one of the other techniques you learned. In some cases, it may be seperable, in some cases you may need to use an integrating factor. Once you have a solution for u, you can then substitute it back into the change of variable you did above.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>First Order ODEs</span>"
     ]
@@ -64,17 +74,27 @@
     "href": "Second Order ODEs.html",
     "title": "3  Second Order ODEs",
     "section": "",
-    "text": "3.1 Homogeneous with Constant Coefficients",
+    "text": "3.1 Homogeneous with Constant Coefficients\nSecond order ODEs are differential equations where we may have second derivatives of y with respect to x. The general form looks like\n\\(A(x) y^{''} + B(x) y^{'} + C(x) y = F(x)\\)\nUsually, we divide through so that the \\(y^{''}\\) term is all by itself. If we do this, we end up with\n\\(y^{''} + p(x) y^{'} + q(x) y = f(x)\\)\nThe first class of second order ODEs we will look at are homogeneous equations. This is the special case of setting \\(f(x) = 0\\). We will also further constrain the equations for this section by only looking at constant coefficients. This special case looks like\n\\(y^{''} + b y^{'} + c y = 0\\)\nIn the most general case, there should be two linearly independent solutions (\\(y_1 and y_2\\)) that combine to make the general solution. This general solution looks like\n\\(y = C_1 y_1 + C_2 y_2\\)\nYou can check for linear independence by using the Wronskian. If we have linear independence, then we have\n\\(\\begin{vmatrix}\ny_1 & y_2 \\\\\ny^{'}_1 & y^{'}_2\n\\end{vmatrix} \\ne 0\\)\nIn order to find these two solutions to the differential equation, we start by setting up the characteristic equation that is associated with the differential equation. This characteristic equation is given by\n\\(a r^2 + b r + c = 0\\)\nWe can then find out what the two values for r are. Because this is just a quadratic equation, it is simply\n\\(r_1,r_2 = \\frac{-b \\pm \\sqrt{b^2 - 4 a c}}{2 a}\\)\nThere are three cases when solving for r.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Second Order ODEs</span>"
     ]
   },
   {
-    "objectID": "Second Order ODEs.html#examples-and-the-initial-value-problem",
-    "href": "Second Order ODEs.html#examples-and-the-initial-value-problem",
+    "objectID": "Second Order ODEs.html#homogeneous-with-constant-coefficients",
+    "href": "Second Order ODEs.html#homogeneous-with-constant-coefficients",
     "title": "3  Second Order ODEs",
-    "section": "3.2 Examples and the Initial Value Problem",
-    "text": "3.2 Examples and the Initial Value Problem",
+    "section": "",
+    "text": "3.1.1 Case 1\nIf we have case 1, we can easily construct our solution. In this case, it would look like\n\\(y = C_1 e^{r_1 x} + C_2 e^{r_2 x}\\)\n\n\n3.1.2 Case 2\nIf we have case 2, we can’t simply use the same method as for case 1. We would end up with two equal equations. In this case, we can separate \\(y_1\\) and \\(y_2\\) by multiplying one of them by x. This would give us the solution\n\\(y = C_1 e^{r x} + C_2 x e^{r x}\\)\n\n\n3.1.3 Case 3\nCase 3 is a new one if you have never considered the imaginary case for the quadratic equation. In this case, the solution to the characteristic equation is\n\\(r_{1,2} = \\alpha \\pm \\beta i\\)\nIn this case, we use the real and imaginary parts of r to make up our solution for y. The general form becomes\n\\(y = C_1 e^{\\alpha x} cos(\\beta x) + C_2 e^{\\alpha x} sin(\\beta x)\\)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Second Order ODEs</span>"
+    ]
+  },
+  {
+    "objectID": "Second Order ODEs.html#initial-value-problem",
+    "href": "Second Order ODEs.html#initial-value-problem",
+    "title": "3  Second Order ODEs",
+    "section": "3.2 Initial Value Problem",
+    "text": "3.2 Initial Value Problem\nIn all of the above cases, we would have constants of integration that would show up in the solutions. In the first order ODE case, a single initial value is enough to define the constant of integration that appears. In the second order case, we will need two initial values. These take the form of\n\\(y(x_0) = y_0 \\\\\ny^{'}(x_0) = y^{'}_0\\)\nThese can be plugged into the general solution for y to find a particular solution.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Second Order ODEs</span>"
     ]
@@ -84,17 +104,7 @@
     "href": "Second Order ODEs.html#non-homogeneous-differential-equations-with-constant-coefficients",
     "title": "3  Second Order ODEs",
     "section": "3.3 Non-homogeneous Differential Equations with Constant Coefficients",
-    "text": "3.3 Non-homogeneous Differential Equations with Constant Coefficients",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Second Order ODEs</span>"
-    ]
-  },
-  {
-    "objectID": "Second Order ODEs.html#variation-of-parameters",
-    "href": "Second Order ODEs.html#variation-of-parameters",
-    "title": "3  Second Order ODEs",
-    "section": "3.4 Variation of Parameters",
-    "text": "3.4 Variation of Parameters",
+    "text": "3.3 Non-homogeneous Differential Equations with Constant Coefficients\nUp to now, we have been working with homogeneous equations where f(x)=0. In many physical situations, we end up with a non-homogeneous differential equation. The f(x) term is often called a driving function or forcing function.\nIn order to solve these types of equations, we start by assuming that the equation is homogeneous. In this way, we can find a complimentary solution, \\(y_c\\) that solves the equation when we pretend that f(x)=0. The second step is to come up with a second solution, \\(y_p\\), called the particular solution. We will look at two options of finding this particular solution.\n\n3.3.1 Undetermined Coefficients\nThe first method is to use the method of undetermined coefficients.\n\n\n3.3.2 Variation of Parameters",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Second Order ODEs</span>"
     ]
@@ -103,8 +113,8 @@
     "objectID": "Second Order ODEs.html#applications",
     "href": "Second Order ODEs.html#applications",
     "title": "3  Second Order ODEs",
-    "section": "3.5 Applications",
-    "text": "3.5 Applications",
+    "section": "3.4 Applications",
+    "text": "3.4 Applications",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Second Order ODEs</span>"
     ]
