@@ -86,11 +86,93 @@ In order to solve these types of equations, we start by assuming that the equati
 
 ### Undetermined Coefficients
 
-The first method is to use the method of undetermined coefficients.
+The first method is to use the method of undetermined coefficients. The first step is to find $y_c$. This is done by assuming that the ODE is actually homogeneous, or of the form
+
+$a y^{''} + b y^{'} + c y = 0$
+
+In this case, we can set up a characteristic equation that is associated with the homogeneous version of our ODE.
+
+$a r^2 + b r + c = 0$
+
+We now need to solve for the values of r, using this basic quadratic equation. The solution is given by
+
+$r = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$
+
+This gives us three cases for possible values of r.
+
+#### Case 1
+In this case, both values of r are real and unique. For this case, we have a solution of y given by
+
+$y = C_1 e^{r_1 x} + C_2 e^{r_2 x}$
+
+#### Case 2
+In this case, r is real, but both values are equal. In this case, we need to adjust one of the possible terms for y so that everything stays linearly independent. We then get
+
+$y = C_1 e^{r x} + C_2 x e^{r x}$
+
+#### Case 3
+In this case, we end up with complex values for r, of the form
+
+$r = \alpha \pm \beta i$
+
+This leads to solutions for y as given by
+
+$y = C_1 e^{\alpha x} cos(\beta x) + C_2 e^{\alpha x} sin(\beta x)$
+
+Once we have this solution for the homogeneous version, we need to find the extra part to account for the right hand side of the equation, f(x). This extra part is called the driving function or forcing function. We actually make a guess based on the form of f(x). The table below covers the standard types of f(x) that we tend to run into.
+
+| $f(x)$ | $y_p$ |
+|--------|-------|
+| $a x + b$ | $A x + B$ |
+| $a x^2 + b x + c$ | $A x^2 + B x + C$ |
+| $a sin(b x)$ | $A sin(b x) + B cos(b x)$ |
+| $a cos(b x)$ | $A cos(b x) + B sin(b x)$ |
+| $a e^{b x}$ | $A e^{b x}$ |
+| $(a x + b) e^{c x}$ | $(A x + B) e^{c x}$ |
+| $a e^{b x} sin(c x)$ | $A e^{b x} sin(c x) + B e^{b x} cos(c x)$|
+| $(a x^2 + b x + c) e^{d x} cos(\pi x)$ | $(A x^2 + B x + C) e^{d x} cos(\pi x) + (D x^2 + E x + F) e^{d x} sin(\pi x)$ |
+| $a x + e^{b x}$ | $A x + B + C e^{b x}$ |
+| $a + e^{b x}$ | $A + B e^{b x}$ |
+| $a e^{b x} + c sin(d x)$ | $A e^{b x} + C sin(d x) + D cos(d x)$ |
+| $a x^2 + b cos(c x)$ | $A x^2 + B x + C + D cos(c x) + E sin(c x)$ |
+
+In order to find the coefficients, you would take the first and second derivatives of your guess and plug it into the origianl equation in question. Setting this equal to f(x), you can then compare terms from the left hand side to the equivalent terms on the right hand side to find each of the coefficients. This then gives you the $y_p$ part of the general solution.
+
+*NOTE* - You need to make sure that $y_c$ and $y_p$ are linearly independent. If they aren't, you can multiply $y_p$ by some power of x in order to make the solutions linearly independent.
+
 
 ### Variation of Parameters
 
+In order to use variation of parameters, you start the same way as above to find the $y_c$ solution. Once you have that, you will have two partial solutions $y_1$ and $y_2$, since we have
+
+$y_c = C_1 y_1 + C_2 y_2$
+
+The second solution is given by
+
+$y_p = u_1 y_1 + u_2 y_2$
+
+In order to find $u_1$ and $u_2$, we use the following formulas:
+
+$u_1^{'} = \frac{
+\begin{vmatrix}
+0 & y_2 \\
+f(x) & y_2^{'}
+\end{vmatrix}}{\begin{vmatrix}
+y_1 & y_2 \\
+y_1^{'} & y_2^{'}
+\end{vmatrix}}$
+
+and
+
+$u_2^{'} = \frac{
+\begin{vmatrix}
+y_1 & 0 \\
+y_1^{'} & f(x)
+\end{vmatrix}}{\begin{vmatrix}
+y_1 & y_2 \\
+y_1^{'} & y_2^{'}
+\end{vmatrix}}$
+
+Once you integrate these to get $u_1$ and $u_2$, you can plug them back into $y_p$.
 
 
-
-## Applications

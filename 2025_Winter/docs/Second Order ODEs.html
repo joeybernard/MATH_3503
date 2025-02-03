@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ecbd48cc4761e6ed622f7d401c35a2ec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -183,12 +183,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -211,7 +205,6 @@ window.Quarto = {
   <li><a href="#undetermined-coefficients" id="toc-undetermined-coefficients" class="nav-link" data-scroll-target="#undetermined-coefficients"><span class="header-section-number">3.3.1</span> Undetermined Coefficients</a></li>
   <li><a href="#variation-of-parameters" id="toc-variation-of-parameters" class="nav-link" data-scroll-target="#variation-of-parameters"><span class="header-section-number">3.3.2</span> Variation of Parameters</a></li>
   </ul></li>
-  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">3.4</span> Applications</a></li>
   </ul>
 </nav>
     </div>
@@ -288,16 +281,124 @@ y^{'}(x_0) = y^{'}_0\)</span></p>
 <p>In order to solve these types of equations, we start by assuming that the equation is homogeneous. In this way, we can find a complimentary solution, <span class="math inline">\(y_c\)</span> that solves the equation when we pretend that f(x)=0. The second step is to come up with a second solution, <span class="math inline">\(y_p\)</span>, called the particular solution. We will look at two options of finding this particular solution.</p>
 <section id="undetermined-coefficients" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="undetermined-coefficients"><span class="header-section-number">3.3.1</span> Undetermined Coefficients</h3>
-<p>The first method is to use the method of undetermined coefficients.</p>
+<p>The first method is to use the method of undetermined coefficients. The first step is to find <span class="math inline">\(y_c\)</span>. This is done by assuming that the ODE is actually homogeneous, or of the form</p>
+<p><span class="math inline">\(a y^{''} + b y^{'} + c y = 0\)</span></p>
+<p>In this case, we can set up a characteristic equation that is associated with the homogeneous version of our ODE.</p>
+<p><span class="math inline">\(a r^2 + b r + c = 0\)</span></p>
+<p>We now need to solve for the values of r, using this basic quadratic equation. The solution is given by</p>
+<p><span class="math inline">\(r = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}\)</span></p>
+<p>This gives us three cases for possible values of r.</p>
+<section id="case-1-1" class="level4" data-number="3.3.1.1">
+<h4 data-number="3.3.1.1" class="anchored" data-anchor-id="case-1-1"><span class="header-section-number">3.3.1.1</span> Case 1</h4>
+<p>In this case, both values of r are real and unique. For this case, we have a solution of y given by</p>
+<p><span class="math inline">\(y = C_1 e^{r_1 x} + C_2 e^{r_2 x}\)</span></p>
+</section>
+<section id="case-2-1" class="level4" data-number="3.3.1.2">
+<h4 data-number="3.3.1.2" class="anchored" data-anchor-id="case-2-1"><span class="header-section-number">3.3.1.2</span> Case 2</h4>
+<p>In this case, r is real, but both values are equal. In this case, we need to adjust one of the possible terms for y so that everything stays linearly independent. We then get</p>
+<p><span class="math inline">\(y = C_1 e^{r x} + C_2 x e^{r x}\)</span></p>
+</section>
+<section id="case-3-1" class="level4" data-number="3.3.1.3">
+<h4 data-number="3.3.1.3" class="anchored" data-anchor-id="case-3-1"><span class="header-section-number">3.3.1.3</span> Case 3</h4>
+<p>In this case, we end up with complex values for r, of the form</p>
+<p><span class="math inline">\(r = \alpha \pm \beta i\)</span></p>
+<p>This leads to solutions for y as given by</p>
+<p><span class="math inline">\(y = C_1 e^{\alpha x} cos(\beta x) + C_2 e^{\alpha x} sin(\beta x)\)</span></p>
+<p>Once we have this solution for the homogeneous version, we need to find the extra part to account for the right hand side of the equation, f(x). This extra part is called the driving function or forcing function. We actually make a guess based on the form of f(x). The table below covers the standard types of f(x) that we tend to run into.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 53%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(f(x)\)</span></th>
+<th><span class="math inline">\(y_p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(a x + b\)</span></td>
+<td><span class="math inline">\(A x + B\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a x^2 + b x + c\)</span></td>
+<td><span class="math inline">\(A x^2 + B x + C\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a sin(b x)\)</span></td>
+<td><span class="math inline">\(A sin(b x) + B cos(b x)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a cos(b x)\)</span></td>
+<td><span class="math inline">\(A cos(b x) + B sin(b x)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a e^{b x}\)</span></td>
+<td><span class="math inline">\(A e^{b x}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((a x + b) e^{c x}\)</span></td>
+<td><span class="math inline">\((A x + B) e^{c x}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a e^{b x} sin(c x)\)</span></td>
+<td><span class="math inline">\(A e^{b x} sin(c x) + B e^{b x} cos(c x)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((a x^2 + b x + c) e^{d x} cos(\pi x)\)</span></td>
+<td><span class="math inline">\((A x^2 + B x + C) e^{d x} cos(\pi x) + (D x^2 + E x + F) e^{d x} sin(\pi x)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a x + e^{b x}\)</span></td>
+<td><span class="math inline">\(A x + B + C e^{b x}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a + e^{b x}\)</span></td>
+<td><span class="math inline">\(A + B e^{b x}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a e^{b x} + c sin(d x)\)</span></td>
+<td><span class="math inline">\(A e^{b x} + C sin(d x) + D cos(d x)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a x^2 + b cos(c x)\)</span></td>
+<td><span class="math inline">\(A x^2 + B x + C + D cos(c x) + E sin(c x)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In order to find the coefficients, you would take the first and second derivatives of your guess and plug it into the origianl equation in question. Setting this equal to f(x), you can then compare terms from the left hand side to the equivalent terms on the right hand side to find each of the coefficients. This then gives you the <span class="math inline">\(y_p\)</span> part of the general solution.</p>
+<p><em>NOTE</em> - You need to make sure that <span class="math inline">\(y_c\)</span> and <span class="math inline">\(y_p\)</span> are linearly independent. If they aren’t, you can multiply <span class="math inline">\(y_p\)</span> by some power of x in order to make the solutions linearly independent.</p>
+</section>
 </section>
 <section id="variation-of-parameters" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="variation-of-parameters"><span class="header-section-number">3.3.2</span> Variation of Parameters</h3>
-</section>
-</section>
-<section id="applications" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="applications"><span class="header-section-number">3.4</span> Applications</h2>
+<p>In order to use variation of parameters, you start the same way as above to find the <span class="math inline">\(y_c\)</span> solution. Once you have that, you will have two partial solutions <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span>, since we have</p>
+<p><span class="math inline">\(y_c = C_1 y_1 + C_2 y_2\)</span></p>
+<p>The second solution is given by</p>
+<p><span class="math inline">\(y_p = u_1 y_1 + u_2 y_2\)</span></p>
+<p>In order to find <span class="math inline">\(u_1\)</span> and <span class="math inline">\(u_2\)</span>, we use the following formulas:</p>
+<p><span class="math inline">\(u_1^{'} = \frac{
+\begin{vmatrix}
+0 &amp; y_2 \\
+f(x) &amp; y_2^{'}
+\end{vmatrix}}{\begin{vmatrix}
+y_1 &amp; y_2 \\
+y_1^{'} &amp; y_2^{'}
+\end{vmatrix}}\)</span></p>
+<p>and</p>
+<p><span class="math inline">\(u_2^{'} = \frac{
+\begin{vmatrix}
+y_1 &amp; 0 \\
+y_1^{'} &amp; f(x)
+\end{vmatrix}}{\begin{vmatrix}
+y_1 &amp; y_2 \\
+y_1^{'} &amp; y_2^{'}
+\end{vmatrix}}\)</span></p>
+<p>Once you integrate these to get <span class="math inline">\(u_1\)</span> and <span class="math inline">\(u_2\)</span>, you can plug them back into <span class="math inline">\(y_p\)</span>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

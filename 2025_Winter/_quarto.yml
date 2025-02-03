@@ -15,15 +15,12 @@ book:
     - Fourier Series.qmd
     - Laplace Transforms.qmd
     - summary.qmd
-    - references.qmd
-
-bibliography: references.bib
 
 format:
   html:
     theme: cosmo
   pdf:
-    documentclass: scrbook
+    documentclass: report
 
 
 
