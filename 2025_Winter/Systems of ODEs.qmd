@@ -2,7 +2,9 @@
 title: Systems of ODEs
 ---
 
-## Fundamentals and Examples
+## Introduction
+
+In many realistic cases, we don't simply have a single dependent variable. In many real situations, we may have multiple equations in several dependent variables. This section of the course will cover the techniques and pratices to help solve these types of systems of equations.
 
 ## Physical Examples
 
