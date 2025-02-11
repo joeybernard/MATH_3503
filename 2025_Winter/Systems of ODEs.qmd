@@ -6,13 +6,86 @@ title: Systems of ODEs
 
 In many realistic cases, we don't simply have a single dependent variable. In many real situations, we may have multiple equations in several dependent variables. This section of the course will cover the techniques and pratices to help solve these types of systems of equations.
 
-## Physical Examples
+
 
 ## Ideas and Notation
 
+The basic idea in these methods is to convert a higher order ODE into a system of 1st order ODEs. We will be looking at just homogeneous ODEs for this section. This is done by introducing a new set of variables for each of the new ODEs. For example, say we had an original 3rd order ODE given by
+
+$u^{'''} + a u^{''} + b u^{'} + c u = 0$
+
+We could replace this with
+
+$\begin{multiline}
+y_1 = u \\
+y_2 = u^{'} = y_1^{'} \\
+y_3 = u^{''} = y_2^{'} \\
+y_4 = u^{'''} = y_3^{'}
+\end{multiline}$
+
+This would give us the system
+
+$\begin{multiline}
+y_3^{'} = -a y_3 - b y_2 - c y_1 \\
+y_2^{'} = y_3 \\
+y_1^{'} = y_2
+\end{multiline}$
+
+With everything in order like this, this is called the normalized form. We can also write this in a matrix form, as
+
+$Y^{'} = A Y$
+
+where we have
+
+$Y^{'} = \begin{bmatrix} y_1^{'} \\ y_2^{'} \\ ... \end{bmatrix}$
+
+$A = \begin{bmatrix} a_{11} & a_{12} & ... \\ a_{21} & a_{22} & ... \\ ... & ... & ... \end{bmatrix}$
+
+$Y = \begin{bmatrix} y_1 \\ y_2 \\ ... \end{bmatrix}$
+
+Solutions to these systems are always found over some interval $I = [a,b]$. It is importnat to know whether these solutions are linearly independent or not. In order to test this, we can check the Wronskian, given by
+
+$W[Y_1, Y_2, Y_3, ...] = | Y_1 Y_2 Y_3 ... | \ne 0$
+
+If we have a set of solutions that are linearly independent, then this becomes the fundamental set of solutions. This fundamental set of solutions can be combined into a matrix, of the form
+
+$\Phi = [ Y_1 Y_2 Y_3 ...]$
+
+called the fundamental matrix.
+
+
+
 ## Eigenvalue Method Examples
 
-## Complex Eigenvalues
+In order to solve these types of systems of ODEs, we assume that the solution will be of the form
+
+$Y = V e^{\lambda t}$
+
+where $\lambda$ is an eigenvalue and $V$ is the associated eigenvector. If we plug this into our system, we get
+
+$\begin{multiline}
+Y^{'} = A Y \\
+V \lambda e^{\lambda t} = A V e^{\lambda t} \\
+A V - \lambda V = 0 \\
+(A - \lambda I) V = 0
+\end{multiline}$
+
+This means that if we solve the problem
+
+$A - \lambda I = 0$
+
+this is equivalent to solving the original system of ODEs.
+
+We have three possible cases when solving this new problem:
+- case 1 : real and distinct eigenvalues
+- case 2 : real and at least some repeated eigenvalues
+- case 3 : at least 1 complex eigenvalue
+
+For case 1, we can simply find the associated eigenvector for each unique eigenvalue, and this gives us our set of solutions.
+
+For case 2, where we have at least one repeated eigenvalue, we need to do something a little different.
+
+
 
 ## Vector Fields
 
