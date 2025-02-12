@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -167,12 +196,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">4.1</span> Introduction</a></li>
   <li><a href="#ideas-and-notation" id="toc-ideas-and-notation" class="nav-link" data-scroll-target="#ideas-and-notation"><span class="header-section-number">4.2</span> Ideas and Notation</a></li>
   <li><a href="#eigenvalue-method-examples" id="toc-eigenvalue-method-examples" class="nav-link" data-scroll-target="#eigenvalue-method-examples"><span class="header-section-number">4.3</span> Eigenvalue Method Examples</a></li>
-  <li><a href="#complex-eigenvalues" id="toc-complex-eigenvalues" class="nav-link" data-scroll-target="#complex-eigenvalues"><span class="header-section-number">4.4</span> Complex Eigenvalues</a></li>
-  <li><a href="#vector-fields" id="toc-vector-fields" class="nav-link" data-scroll-target="#vector-fields"><span class="header-section-number">4.5</span> Vector Fields</a></li>
-  <li><a href="#second-order-systems" id="toc-second-order-systems" class="nav-link" data-scroll-target="#second-order-systems"><span class="header-section-number">4.6</span> Second Order Systems</a></li>
-  <li><a href="#repeated-eigenvalues" id="toc-repeated-eigenvalues" class="nav-link" data-scroll-target="#repeated-eigenvalues"><span class="header-section-number">4.7</span> Repeated Eigenvalues</a></li>
-  <li><a href="#matrix-exponentials" id="toc-matrix-exponentials" class="nav-link" data-scroll-target="#matrix-exponentials"><span class="header-section-number">4.8</span> Matrix Exponentials</a></li>
-  <li><a href="#non-homogeneous-equations" id="toc-non-homogeneous-equations" class="nav-link" data-scroll-target="#non-homogeneous-equations"><span class="header-section-number">4.9</span> Non-homogeneous Equations</a></li>
+  <li><a href="#vector-fields" id="toc-vector-fields" class="nav-link" data-scroll-target="#vector-fields"><span class="header-section-number">4.4</span> Vector Fields</a></li>
+  <li><a href="#second-order-systems" id="toc-second-order-systems" class="nav-link" data-scroll-target="#second-order-systems"><span class="header-section-number">4.5</span> Second Order Systems</a></li>
+  <li><a href="#repeated-eigenvalues" id="toc-repeated-eigenvalues" class="nav-link" data-scroll-target="#repeated-eigenvalues"><span class="header-section-number">4.6</span> Repeated Eigenvalues</a></li>
+  <li><a href="#matrix-exponentials" id="toc-matrix-exponentials" class="nav-link" data-scroll-target="#matrix-exponentials"><span class="header-section-number">4.7</span> Matrix Exponentials</a></li>
+  <li><a href="#non-homogeneous-equations" id="toc-non-homogeneous-equations" class="nav-link" data-scroll-target="#non-homogeneous-equations"><span class="header-section-number">4.8</span> Non-homogeneous Equations</a></li>
   </ul>
 </nav>
     </div>
@@ -204,28 +232,65 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="ideas-and-notation" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="ideas-and-notation"><span class="header-section-number">4.2</span> Ideas and Notation</h2>
-<p>The basic idea in these methods is to convert a higher order ODE into a system of 1st order ODEs</p>
+<p>The basic idea in these methods is to convert a higher order ODE into a system of 1st order ODEs. We will be looking at just homogeneous ODEs for this section. This is done by introducing a new set of variables for each of the new ODEs. For example, say we had an original 3rd order ODE given by</p>
+<p><span class="math inline">\(u^{'''} + a u^{''} + b u^{'} + c u = 0\)</span></p>
+<p>We could replace this with</p>
+<p><span class="math inline">\(\begin{multiline}
+y_1 = u \\
+y_2 = u^{'} = y_1^{'} \\
+y_3 = u^{''} = y_2^{'} \\
+y_4 = u^{'''} = y_3^{'}
+\end{multiline}\)</span></p>
+<p>This would give us the system</p>
+<p><span class="math inline">\(\begin{multiline}
+y_3^{'} = -a y_3 - b y_2 - c y_1 \\
+y_2^{'} = y_3 \\
+y_1^{'} = y_2
+\end{multiline}\)</span></p>
+<p>With everything in order like this, this is called the normalized form. We can also write this in a matrix form, as</p>
+<p><span class="math inline">\(Y^{'} = A Y\)</span></p>
+<p>where we have</p>
+<p><span class="math inline">\(Y^{'} = \begin{bmatrix} y_1^{'} \\ y_2^{'} \\ ... \end{bmatrix}\)</span></p>
+<p><span class="math inline">\(A = \begin{bmatrix} a_{11} &amp; a_{12} &amp; ... \\ a_{21} &amp; a_{22} &amp; ... \\ ... &amp; ... &amp; ... \end{bmatrix}\)</span></p>
+<p><span class="math inline">\(Y = \begin{bmatrix} y_1 \\ y_2 \\ ... \end{bmatrix}\)</span></p>
+<p>Solutions to these systems are always found over some interval <span class="math inline">\(I = [a,b]\)</span>. It is importnat to know whether these solutions are linearly independent or not. In order to test this, we can check the Wronskian, given by</p>
+<p><span class="math inline">\(W[Y_1, Y_2, Y_3, ...] = | Y_1 Y_2 Y_3 ... | \ne 0\)</span></p>
+<p>If we have a set of solutions that are linearly independent, then this becomes the fundamental set of solutions. This fundamental set of solutions can be combined into a matrix, of the form</p>
+<p><span class="math inline">\(\Phi = [ Y_1 Y_2 Y_3 ...]\)</span></p>
+<p>called the fundamental matrix.</p>
 </section>
 <section id="eigenvalue-method-examples" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="eigenvalue-method-examples"><span class="header-section-number">4.3</span> Eigenvalue Method Examples</h2>
+<p>In order to solve these types of systems of ODEs, we assume that the solution will be of the form</p>
+<p><span class="math inline">\(Y = V e^{\lambda t}\)</span></p>
+<p>where <span class="math inline">\(\lambda\)</span> is an eigenvalue and <span class="math inline">\(V\)</span> is the associated eigenvector. If we plug this into our system, we get</p>
+<p><span class="math inline">\(\begin{multiline}
+Y^{'} = A Y \\
+V \lambda e^{\lambda t} = A V e^{\lambda t} \\
+A V - \lambda V = 0 \\
+(A - \lambda I) V = 0
+\end{multiline}\)</span></p>
+<p>This means that if we solve the problem</p>
+<p><span class="math inline">\(A - \lambda I = 0\)</span></p>
+<p>this is equivalent to solving the original system of ODEs.</p>
+<p>We have three possible cases when solving this new problem: - case 1 : real and distinct eigenvalues - case 2 : real and at least some repeated eigenvalues - case 3 : at least 1 complex eigenvalue</p>
+<p>For case 1, we can simply find the associated eigenvector for each unique eigenvalue, and this gives us our set of solutions.</p>
+<p>For case 2, where we have at least one repeated eigenvalue, we need to do something a little different.</p>
 </section>
-<section id="complex-eigenvalues" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="complex-eigenvalues"><span class="header-section-number">4.4</span> Complex Eigenvalues</h2>
+<section id="vector-fields" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="vector-fields"><span class="header-section-number">4.4</span> Vector Fields</h2>
 </section>
-<section id="vector-fields" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="vector-fields"><span class="header-section-number">4.5</span> Vector Fields</h2>
+<section id="second-order-systems" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="second-order-systems"><span class="header-section-number">4.5</span> Second Order Systems</h2>
 </section>
-<section id="second-order-systems" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="second-order-systems"><span class="header-section-number">4.6</span> Second Order Systems</h2>
+<section id="repeated-eigenvalues" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="repeated-eigenvalues"><span class="header-section-number">4.6</span> Repeated Eigenvalues</h2>
 </section>
-<section id="repeated-eigenvalues" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="repeated-eigenvalues"><span class="header-section-number">4.7</span> Repeated Eigenvalues</h2>
+<section id="matrix-exponentials" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="matrix-exponentials"><span class="header-section-number">4.7</span> Matrix Exponentials</h2>
 </section>
-<section id="matrix-exponentials" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="matrix-exponentials"><span class="header-section-number">4.8</span> Matrix Exponentials</h2>
-</section>
-<section id="non-homogeneous-equations" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="non-homogeneous-equations"><span class="header-section-number">4.9</span> Non-homogeneous Equations</h2>
+<section id="non-homogeneous-equations" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="non-homogeneous-equations"><span class="header-section-number">4.8</span> Non-homogeneous Equations</h2>
 
 
 </section>
