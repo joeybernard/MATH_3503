@@ -2,8 +2,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage[lmargin=71pt, tmargin=1.2in]{geometry}  %For centering solution box
-\lhead{Name\\}
-\rhead{Student ID\\}
+%\lhead{Name\\}
+%\rhead{Student ID\\}
 % \chead{\hline} % Un-comment to draw line below header
 %\thispagestyle{empty}   %For removing header/footer from page 1
 
@@ -24,41 +24,113 @@
     
 \thispagestyle{empty}   %For removing header/footer from page 1
     
-    \question[3 Marks] What is the property of sine and cosine functions that make them appropriate for the Fourier Series?\droppoints
+    \question[1 Marks] Transform the given equation into a system of first-order equations.\\
+              \begin{center} $t^2 y^{''} + t y^{'} + (t^2 - 0.25)y = 0$ \end{center} 
+    \droppoints
 
-    \question[3 Marks] Show that sin(t) and cos(t) are linearly independent.\droppoints
+    \question[2 Marks] Find the solution of the given initial value problem. \\
+              \begin{center} $\mathbf{x}^{'} = \begin{bmatrix} -3 & 2 \\ -1 & -1 \end{bmatrix} \mathbf{x}; \; \; \; \mathbf{x}(0) = \begin{bmatrix} 1 \\ -2 \end{bmatrix}$ \end{center}
+    \droppoints
     
-    \question[4 Marks] Using the expansion of the exponential function, calculate $e^{At}$ where $A = \begin{bmatrix} 1 & 1 \\ 0 & 1\end{bmatrix}$.\droppoints
+    \question[2 Marks] Find the general solution to the system. (You may use any of the methods discussed in class). \\
+              \begin{center} $\mathbf{x}^{'} = \begin{bmatrix} -2 & 1 \\ 1 & -2 \end{bmatrix} \mathbf{x} = \begin{bmatrix} 2 e^{-t} \\ 3 t \end{bmatrix}$ \end{center}
+    \droppoints
     
-    \question[3 Marks] What is the property of sine and cosine functions that make them appropriate for the Fourier Series?\droppoints
+    \question[3 Marks] Find the Laplace Transforms for the following functions using tables of transforms. \\
+             a) $f(t) = 8 sin(2t) - cos(3t) + 1$ \\
+             b) $f(t) = cos^2 (6t)$ \\
+             c) $f(t) 5(t - 3)^2$
+    \droppoints
 
-    \question[3 Marks] Show that sin(t) and cos(t) are linearly independent.\droppoints
+    \question[4 Marks] Given $f(t) = t^2 e^{2t}$ \\
+             a) use the Laplace Transform of derivatives to find $\mathcal{L} \{f(t)\}$. \textit{Hint: Compute $\mathcal{L} \{f^{''}\}$.}\\
+             b) use the derivative of Laplace Transforms to find $\mathcal{L}\{f(t)\}$. \textit{Hint: Let $g(t) = e^{2t}$, compute $G^{''}(s)$}\\
+             c) use the definition of the integral transform to find $\mathcal{L}\{f(t)\}$. \textit{Hint: $\mathcal{L}\{f(t)\} = \int_{0}^{\infty} e^{-st} f(t) dt$}\\
+             d) suppose that $\mathcal{L}\{g(t)\} = \frac{2}{s - 2}$ and $\mathcal{L}\{h(t)\} = \frac{1}{(s-2)^2}$, show that $(g \ast h)(t) = f(t)$.
+    \droppoints
     
-    \question[4 Marks] Using the expansion of the exponential function, calculate $e^{At}$ where $A = \begin{bmatrix} 1 & 1 \\ 0 & 1\end{bmatrix}$.\droppoints
+    \question[4 Marks] Find $\mathcal{L}^{-1}\{F(s)\}$\\
+             a) $F(s) = \frac{3}{s^2 - 4}$\\
+             b) $F(s) = \frac{1}{(s-1)^2 (s+1)}$\\
+             c) $F(s) = \frac{1}{s^2 - 2s + 5}$\\
+             d) $F(s) = \frac{8}{s^3 (s+2)}$
+    \droppoints
     
-    \question[3 Marks] What is the property of sine and cosine functions that make them appropriate for the Fourier Series?\droppoints
+    \question[3 Marks] Let $f(t)$ be periodic with period two and let\\
+             \begin{equation}
+             f(t) = 
+                 \begin{cases}
+                   1, & \text{if } -1 \leq t < 0\\
+                   0, & \text{if } 0 \leq t < 1
+                 \end{cases}
+             \end{equation}
+             Calculate the coefficients of the Fourier series for f(t). That is, give formulas fo $a_0$, $a_n$ and $b_n$ so that \\
+             \begin{center}$f(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n cos(\frac{n \pi t}{L}) + \sum_{n=1}^{\infty} b_n sin(\frac{n \pi t}{L})$ \end{center}
+             for almost all values of t. At what values of t does the Fourier series not converge to f(t)?
+    \droppoints
 
-    \question[3 Marks] Show that sin(t) and cos(t) are linearly independent.\droppoints
+    \question[6 Marks] Solve the following differential equations by using one of the following techniques: variable-separable, linear (with an integration factor), homogeneous, exact, or Bernoulli. Be sure to include the trivial solution, if it exists. Where initial conditions are given, find the particular solution for the system. \\
+              a) $e^y sin(2x)dx + cos(x) (e^{2y} - y) dy = 0$ \\
+              b) $\frac{dy}{dx} = \frac{y - x}{y + x}$ \\
+              c) $(5x + 4y)dx + (4x - 8y^3)dy = 0$ \\
+              d) $(x^4 - y)dx + (x^2y^2 + x)dy = 0$ \\
+              e) $y^2 dx + (x^2 + xy + y^2)dy = 0, y(0) = 1$ \\
+              f) $(y^2 cos(x) - 3x^2y - 2x) dx + (2y sin(x) - x^3 + ln(y))dy = 0, y(0) = e$
+    \droppoints
     
-    \question[4 Marks] Using the expansion of the exponential function, calculate $e^{At}$ where $A = \begin{bmatrix} 1 & 1 \\ 0 & 1\end{bmatrix}$.\droppoints
+    \question[6 Marks] Use the Method of Undetermined Coefficients to solve the following initial value problems.\\
+              a) $y^{''} + 9y = cos(3x) + sin(3x), y(0) = 2, y^{'}(0)=1$\\
+              b) $y^{''} - 4y^{'} + 4y = t sin(t), y(0) = 1, y^{'}(0) = 1$\\
+              c) $u^{''} + 2u^{'} + u = x e^{-x} + x, u(0) = -2, u^{'}(0) = 1$
+    \droppoints
     
-    \question[3 Marks] What is the property of sine and cosine functions that make them appropriate for the Fourier Series?\droppoints
+    \question[4 Marks] Two springs and two masses ($m_1 = 2kg$ and $m_2 = 1kg$) are attached in a straight line on a horizontal surface, as shown below. The masses are displaced to the right from their equilibrium positions and then released. The mass $m_1$ is displaced \textit{2m} and the mass $m_2$ is displaced |textit{3m}. By applying Newton's Second Law of Motion to each mass, the following two equations describe the coupled oscillating system.\\
+             \begin{equation}
+             \begin{split}
+                 m_1 x_{1}^{''} & = -k_1 x_1 + k_2 (x_2 - x_1) \\
+                 m_2 x_{2}^{''} & = -k_2 (x_2 - x_1) 
+             \end{split}
+             \end{equation}
+             a) Rewrite the equations as a system of first order equations. \\
+             b) Express the system in matrix form: $\mathbf{Z}^{'} = \mathbf{A}\mathbf{Z} + \mathbf{F}; \mathbf{Z}(t_0) = \mathbf{k}$ \\
+             c) Solve the initial value problem. Let $k_1 = 4 N/m$ and $k_2 = 2 N/m$.
+    \droppoints
 
-    \question[3 Marks] Show that sin(t) and cos(t) are linearly independent.\droppoints
+    \question[4 Marks] Solve the initial value problems. \\
+             a) $\mathbf{Y}^{'} = \begin{bmatrix} 3 & -1 & -1 \\ -2 & 3 & 2 \\ 4 & -1 & -2 \end{bmatrix} \mathbf{Y}; \mathbf{Y}(0) = \begin{bmatrix} 2 \\ -1 \\ 8 \end{bmatrix}$ \\
+             b) $\mathbf{Y}^{'} = \begin{bmatrix} 7 & 15 \\ -3 & 1 \end{bmatrix} \mathbf{Y}; \mathbf{Y}(0) = \begin{bmatrix} 5 \\ 1 \end{bmatrix}$
+    \droppoints
     
-    \question[4 Marks] Using the expansion of the exponential function, calculate $e^{At}$ where $A = \begin{bmatrix} 1 & 1 \\ 0 & 1\end{bmatrix}$.\droppoints
+    \question[4 Marks] Use the Method of Variation of Parameters to find the solution to the following systems: \\
+             a) $\mathbf{Y}^{'} = \begin{bmatrix} 1 & 1 \\ 3 & -1 \end{bmatrix} \mathbf{Y} + \begin{bmatrix} 2 \\ 1 \end{bmatrix}$ \\
+             b) $\mathbf{Y}^{'} = \begin{bmatrix} -2 & 1 \\ 1 & -2 \end{bmatrix} \mathbf{Y} + \begin{bmatrix} 2 e^{-t} \\ 3t \end{bmatrix}$
+    \droppoints
     
-    \question[3 Marks] What is the property of sine and cosine functions that make them appropriate for the Fourier Series?\droppoints
+    \question[16 Marks] For each of the following periodic functions f(t):\\
+             (i) find the Fourier coefficients of f\\
+             (ii) find the Fourier series of f.\\
+             (iii) write the first three non-zero harmonic terms of the series\\
+             (iiii) plot the periodic function f(t) and the partial sum of the first 10 harmonics of the Fourier Series using software (Geogebra, Python, etc)\\
+             a) $f(t) = sin^2(t) for -\pi < t \le \pi, \; f(t) = f(t + 2\pi)$\\
+             b) $f(t) = \begin{cases}
+                   0; & -\pi < t < 0\\
+                   t^2; & 0 \le t \le \pi \end{cases} \; f(t) = f(t + 2\pi)$ \\
+             c) $f(t) = \begin{cases}
+                   -t; & -4 \le t < 0\\
+                   0; & 0 \le t < 4 \end{cases} \; f(t) = f(t + 8)$ \\
+             d) $f(t) = \begin{cases}
+                   t; & 0 \le t < 2\\
+                   2; & 2 \le t < 4\\
+                   6-t; & 4 \le t \le 6 \end{cases} \; f(t) = f(t + 6)$
+    \droppoints
 
-    \question[3 Marks] Show that sin(t) and cos(t) are linearly independent.\droppoints
+    \question[4 Marks] Show whether the following functions are linearly independent or not:\\
+             a) $sin(t) \; , \; cos(t)$\\
+             b) $cos(2t) \; ' \; tan(t)$\\
+             c) $5t \; , \; 6t^3$\\
+             d) $e^{3t} \; , \; e^t$
+    \droppoints
     
-    \question[4 Marks] Using the expansion of the exponential function, calculate $e^{At}$ where $A = \begin{bmatrix} 1 & 1 \\ 0 & 1\end{bmatrix}$.\droppoints
-    
-    \question[3 Marks] What is the property of sine and cosine functions that make them appropriate for the Fourier Series?\droppoints
-
-    \question[3 Marks] Show that sin(t) and cos(t) are linearly independent.\droppoints
-    
-    \question[4 Marks] Using the expansion of the exponential function, calculate $e^{At}$ where $A = \begin{bmatrix} 1 & 1 \\ 0 & 1\end{bmatrix}$.\droppoints
     
 \end{questions}
 \end{document}

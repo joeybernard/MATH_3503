@@ -21,6 +21,6 @@ format:
     theme: cosmo
   pdf:
     documentclass: report
-
+    keep-tex: true
 
 
